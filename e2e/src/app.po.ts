@@ -1,11 +1,24 @@
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
-  navigateTo(): Promise<unknown> {
-    return browser.get(browser.baseUrl) as Promise<unknown>;
+
+  navigateTo() {
+    return browser.get('/');;
   }
 
-  getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+  getLoginPageName(): Promise<string> {
+    return element(by.xpath('/html/body/app-root/app-login-page/div/mat-card/form/div/div[1]/h1/b')).getText() as Promise<string>;
+  }
+
+  sendUserName(){
+    element(by.xpath('//*[@id="mat-input-0"]')).sendKeys("Heta");
+  }
+
+  sendPassword() {
+    element(by.xpath('//*[@id="mat-input-1"]')).sendKeys("123456");
+  }
+
+  clickOnLoginBtn() {
+    element(by.cssContainingText('.mat-flat-button', 'Sign in')).click();
   }
 }

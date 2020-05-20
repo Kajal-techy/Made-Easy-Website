@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: row-reverse;
+}
