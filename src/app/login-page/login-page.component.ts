@@ -27,7 +27,7 @@ export class LoginPageComponent implements OnInit {
     if (!this.loginForm.valid)
       return;
     this.authService.authenticateUser(this.loginForm.value.userName, this.loginForm.value.password)
-      .subscribe((data) => {
+      .then((data) => {
         this.sessionService.setToken(data['jwtResponse'], data['loggedInUserId'], this.loginForm.value.userName);
         console.log("Response after login = " + JSON.stringify(data) );
         this.router.navigate(['/dashboard']);
