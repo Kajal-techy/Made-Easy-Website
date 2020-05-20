@@ -8,16 +8,24 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display Made Easy Website title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Made-Easy-Website app is running!');
+    browser.getTitle().then(function(title) {
+    expect(title).toEqual('MadeEasyWebsite');
+    });
   });
 
-  afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
-  });
+  it('should display a login page', () => {
+    page.navigateTo();
+    expect(page.getLoginPageName()).toEqual("Login");
+    })
+
+  it('should login into the application', () => {
+    page.navigateTo();
+    page.sendUserName();
+    page.sendPassword();
+    page.clickOnLoginBtn();
+    browser.sleep(1000);
+    expect(browser.getCurrentUrl()).toEqual("http://localhost:4200/dashboard");
+  })
 });
