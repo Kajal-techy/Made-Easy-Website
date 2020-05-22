@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { SessionInfo } from 'src/app/model/SessionInfo'
+import { SessionInfo } from 'src/app/model/sessionInfo'
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SessionService {
 
   sessionInfo: SessionInfo;

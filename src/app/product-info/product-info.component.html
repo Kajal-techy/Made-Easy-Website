@@ -1,0 +1,22 @@
+<mat-card class="container">
+  <div class="containers_row">
+    <div class="product_name">
+      {{product?.name}}
+    </div>
+    <div>
+      <button color="success" mat-button> Buy</button>
+    </div>
+  </div>
+  <div>
+    <b>
+      {{product?.price}} {{product?.unit}}
+    </b>
+  </div>
+  <br>
+  <div>
+    <img class="image-width" src="assets\image\{{product?.image}}">
+  </div>
+  <div class="product_description">
+    {{product?.description}}
+  </div>
+</mat-card>

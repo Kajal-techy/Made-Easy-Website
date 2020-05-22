@@ -1,1 +1,36 @@
-<p>dashboard works!</p>
+<div class="carousel">
+  <mat-card>
+    <owl-carousel [carouselClasses]="['owl-theme', 'sliding']" [options]="mySlideOptions">
+      <div *ngFor="let image of mySlideImages" class="carousel">
+        <div>
+          <img src="assets\image\{{image}}"/>
+        </div>
+      </div>
+    </owl-carousel>
+  </mat-card>
+</div>
+<br>
+<div *ngFor="let product of products">
+  <mat-card (click)="onCardClick(product.id)" matRipple>
+    <mat-card-content>
+      <div class="container">
+        <div class="image-div">
+          <img class="product-image" src="assets\image\{{product.image}}">
+        </div>
+        <div style="flex-grow: 6">
+          <div>
+            <h1><b>{{product.name}}</b></h1>
+          </div>
+          <div>
+            <p> {{product.description}} </p>
+          </div>
+          <div><b name='Reviews2'>Reviews: </b>{{product.reviews}}</div>
+          <div><b>Rating: </b> {{product.rating}}</div>
+        </div>
+        <div style="flex-grow: 1">
+          <B name='price1'>Price: </B>{{product.price}} {{product.unit}}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
