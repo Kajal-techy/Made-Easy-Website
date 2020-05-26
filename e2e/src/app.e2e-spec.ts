@@ -63,6 +63,7 @@ describe('Made Easy Website E2E Testcases', () => {
   /**
    * Product Information page
    */
+  
   it('verify product details should be present', () => {
     browser.wait(expectedWait.visibilityOf(productInfoPage.getProductInfo()), 100000);
     expect(productInfoPage.getProductInfo().getText());
