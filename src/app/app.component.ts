@@ -14,7 +14,7 @@ export class AppComponent {
 
   public navigateToLogin() {
     sessionStorage.clear();
-    this.router.navigate(['/login'])
+    this.router.navigate(['/login']);
   }
 }
 
