@@ -1,6 +1,5 @@
 .containers_row {
     display: flex;
-    flex-direction: row;
     justify-content: space-evenly;
     padding-top: 10%;
     flex-wrap: wrap;
@@ -9,7 +8,6 @@
 .product_info {
     width: 50%;
     min-width: 262px;
-    padding-bottom: 10%;
 }
 
 .seller_info {

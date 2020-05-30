@@ -13,18 +13,18 @@ export class Product {
     rating: string;
     reviews: string[];
     status: ProductStatus;
-    paymentmode: PaymentMode[];
+    paymentMode: PaymentMode[];
     sellerDetails: User;
 
     constructor(name: string, image: string, price: string, unit: string, description: string,
-        status: ProductStatus, paymentmode: PaymentMode[], sellerDetails: User) {
+        status: ProductStatus, paymentMode: PaymentMode[], sellerDetails: User) {
         this.name = name;
         this.image = image;
         this.price = price;
         this.unit = unit;
         this.description = description;
         this.status = status;
-        this.paymentmode = paymentmode;
+        this.paymentMode = paymentMode;
         this.sellerDetails = sellerDetails;
     }
 }

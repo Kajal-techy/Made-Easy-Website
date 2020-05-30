@@ -11,10 +11,10 @@ export class DashBoardPage {
   }
 
   getPriceLable(): any {
-    return element(by.xpath('//*[@name="price1"]'));
+    return element(by.xpath('//*[@name="price"]'));
   }
 
   clickOnProduct() {
-    element(by.xpath('//*[@name="price1"]')).click();
+    element(by.xpath('//*[@name="price"]')).click();
   }
 }

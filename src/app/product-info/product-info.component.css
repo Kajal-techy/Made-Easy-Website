@@ -17,7 +17,6 @@
 
 .containers_row {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     padding-top: 10%;
     flex-wrap: wrap;

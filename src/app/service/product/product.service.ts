@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import  { SessionService } from 'src/app/service/angular-service/session.service';
 import { Product } from 'src/app/model/product';
 import { SessionInfo } from 'src/app/model/sessionInfo';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +15,23 @@ export class ProductService {
 
   constructor(private httpClient: HttpClient, private sessionService: SessionService) { }
 
-  public async getAllProducts() {
+  public getAllProducts(): Observable<any> {
     let header = new HttpHeaders().set(
       "Authorization",
       'Bearer ' + this.sessionService.getSessionInfo().token);
-    return await this.httpClient.get(`${this.url}`, {headers:header}).toPromise();
+    return this.httpClient.get(`${this.url}`, {headers:header});
   }
 
-  public async getProductById(userId: string, sellerDetail: boolean = false) {
+  public getProductById(userId: string, sellerDetail: boolean = false): Observable<any> {
 
     let header = new HttpHeaders().set(
       "Authorization",
       'Bearer ' + this.sessionService.getSessionInfo().token);
-    return await this.httpClient.get(`${this.url}/${userId}?sellerDetail=${sellerDetail}`, {headers:header}).toPromise();
+    return this.httpClient.get(`${this.url}/${userId}?sellerDetail=${sellerDetail}`, {headers:header});
   }
 
-  public async createProduct(product: Product) {
+  public createProduct(product: Product): Observable<any> {
     let header = new HttpHeaders().set("Authorization",'Bearer ' + this.sessionService.getSessionInfo().token);
-    return await this.httpClient.post(`${this.url}`, product, {headers:header}).toPromise();
+    return this.httpClient.post(`${this.url}`, product, {headers:header});
   }
 }

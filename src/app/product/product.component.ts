@@ -15,14 +15,12 @@ export class ProductComponent implements OnInit {
 
   id: string;
   product: Product;
-  sellerDetail: boolean;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
-    this.sellerDetail = true;
-    this.productService.getProductById(this.id, this.sellerDetail).then((data: Product) => {
+    this.productService.getProductById(this.id, true).subscribe((data: Product) => {
       this.product = data;
-      console.log("reponse code = " + JSON.stringify(this.product));
+      console.log("Response from getProductByProductId = " + JSON.stringify(this.product));
     },
       (error: any) => {
         console.log("Error = " + error['status']);
