@@ -1,0 +1,5 @@
+<div class="containers_row">
+    <mat-progress-spinner *ngIf="!product" mode="indeterminate"></mat-progress-spinner>
+    <app-product-info *ngIf="product" [product]="product" class="product_info"></app-product-info>
+    <app-seller-info *ngIf="product" [product]="product" class="seller_info"></app-seller-info>
+</div>

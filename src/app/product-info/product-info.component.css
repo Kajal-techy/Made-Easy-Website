@@ -1,0 +1,35 @@
+.product_name {
+    font-size: 200%;
+    font-stretch: 3vh;
+    flex-grow: 9;
+    padding-bottom: 4%;
+}
+
+.product_description {
+    padding-top: 2%;
+    width: 70%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.containers_row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10%;
+    flex-wrap: wrap;
+    padding: 1%;
+}
+
+.mat-success {
+    background-color: green;
+    color: #fff;
+    width: 110%;
+}
+
+.image-width {
+    min-width: 130px;
+    width: 50%;
+}

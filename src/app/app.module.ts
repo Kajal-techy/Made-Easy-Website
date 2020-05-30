@@ -12,15 +12,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { OwlModule } from 'ngx-owl-carousel';
 
 import { MatSidenavModule } from  '@angular/material/sidenav';
 import { MatListModule } from  '@angular/material/list';
 import { MatIconModule } from  '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductComponent } from './product/product.component';
+import { ProductInfoComponent } from './product-info/product-info.component';
+import { SellerInfoComponent } from './seller-info/seller-info.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
@@ -30,7 +35,10 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginPageComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductComponent,
+    ProductInfoComponent,
+    SellerInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +56,9 @@ const routes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    OwlModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

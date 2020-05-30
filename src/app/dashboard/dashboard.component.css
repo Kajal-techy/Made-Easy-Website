@@ -1,0 +1,18 @@
+.carousel {
+    height: 30vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-div {
+    width: 11%;
+    min-width: 185px;
+}
+
+.product-image {
+    width: 90%;
+    height: 100%;
+}
