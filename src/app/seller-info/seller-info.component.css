@@ -1,18 +1,18 @@
 .seller_details {
-    font-size: 180%;
+    font-size: 1.5rem;
     padding: 3%;
 }
 
 .padding {
     padding: 2%;
-    font-size: 110%;
+    font-size: 1rem;
 }
 
 .containers_row {
     display: flex;
     flex-wrap: wrap;
     padding: 2%;
-    font-size: 110%;
+    font-size: 1rem;
 }
 
 .container {

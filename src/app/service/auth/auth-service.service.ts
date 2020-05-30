@@ -12,7 +12,7 @@ export class AuthService {
 
   public authenticateUser(userName: string, password: string): Observable<any> {
 
-    const HOSTNAME = "http://localhost:8095";
+    const HOSTNAME = 'http://localhost:8095';
     const body = {
       'userName': userName,
       'password': password

@@ -10,7 +10,7 @@ export class DashBoardPage {
       return element(by.css('.owl-stage-outer')) ;
   }
 
-  getPriceLable(): any {
+  getPriceLabel(): any {
     return element(by.xpath('//*[@name="price"]'));
   }
 

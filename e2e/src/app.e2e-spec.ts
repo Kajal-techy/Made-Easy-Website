@@ -9,7 +9,7 @@ describe('Made Easy Website E2E Testcases', () => {
   let dashboardPage: DashBoardPage;
   let productInfoPage: ProductInfoPage;
   var expectedWait = protractor.ExpectedConditions;
-  
+
   beforeEach(() => {
     page = new AppPage();
     dashboardPage = new DashBoardPage();
@@ -44,17 +44,17 @@ describe('Made Easy Website E2E Testcases', () => {
    */
 
   it('Carousal should be present', () => {
-    browser.wait(expectedWait.visibilityOf(dashboardPage.getCarousal()),5000);
+    browser.wait(expectedWait.visibilityOf(dashboardPage.getCarousal()), 5000);
    })
-   
+
   it('verify product should display', () => {
-    expect(dashboardPage.getPriceLable().getText()).toEqual("Price:");
-  }) 
+    expect(dashboardPage.getPriceLabel().getText()).toEqual("Price:");
+  })
 
   it('verify product should be clickable and should redirect to product information page', () => {
-    expect(dashboardPage.getPriceLable().clickable);
-  }) 
-   
+    expect(dashboardPage.getPriceLabel().clickable);
+  })
+
   it('verify page should redirect to product information page', () => {
     dashboardPage.clickOnProduct();
     expect(browser.getCurrentUrl()).toContain('/product');
@@ -63,7 +63,7 @@ describe('Made Easy Website E2E Testcases', () => {
   /**
    * Product Information page
    */
-  
+
   it('verify product details should be present', () => {
     browser.wait(expectedWait.visibilityOf(productInfoPage.getProductInfo()), 100000);
     expect(productInfoPage.getProductInfo().getText());

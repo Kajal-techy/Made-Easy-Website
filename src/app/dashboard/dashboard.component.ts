@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
 
   products: Product[];
 
-  mySlideImages = ["tv.jpg", "image1.jpg", "image3.jpg"];
+  mySlideImages = ['tv.jpg', 'image1.jpg', 'image3.jpg'];
 
   mySlideOptions = {
     items: 1, dots: false, nav: false, autoplay: true, loop: true,
@@ -28,12 +28,12 @@ export class DashboardComponent implements OnInit {
     this.productService.getAllProducts().subscribe((data: Product[]) => {
       this.products = data;
     }, (error: any) => {
-      console.log("Error = " + error['status']);
+      console.log('Error = ' + error['status']);
     });
   }
 
   public onCardClick(id: any) {
-    console.log("Product Details = " + JSON.stringify(id));
+    console.log('Product Details = ' + JSON.stringify(id));
     this.router.navigate([`/product/${id}`]);
   }
 }

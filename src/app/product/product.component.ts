@@ -20,10 +20,10 @@ export class ProductComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     this.productService.getProductById(this.id, true).subscribe((data: Product) => {
       this.product = data;
-      console.log("Response from getProductByProductId = " + JSON.stringify(this.product));
+      console.log('Response from getProductByProductId = ' + JSON.stringify(this.product));
     },
       (error: any) => {
-        console.log("Error = " + error['status']);
+        console.log('Error = ' + error['status']);
       });
   }
 }

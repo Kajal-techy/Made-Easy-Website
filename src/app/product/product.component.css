@@ -1,7 +1,7 @@
 .containers_row {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 10%;
+    padding: 4%;
     flex-wrap: wrap;
 }
 
@@ -14,4 +14,5 @@
     width: 30%;
     min-width: 250px;
     min-height: 200px;
+    padding: 2%;
 }
