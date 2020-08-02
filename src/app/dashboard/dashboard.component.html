@@ -3,13 +3,33 @@
     <owl-carousel [carouselClasses]="['owl-theme', 'sliding']" [options]="mySlideOptions">
       <div *ngFor="let image of mySlideImages" class="carousel">
         <div>
-          <img src="assets\image\{{image}}"/>
+          <img src="assets\image\{{image}}" />
         </div>
       </div>
     </owl-carousel>
   </mat-card>
 </div>
 <br>
+<br>
+<div class="container">
+  <mat-card class="mat-card">
+    <form (submit)="submit()" [formGroup]="loginForm" class="search-container">
+      <div class="search-div">
+        <mat-form-field appearance="fill" class="search-field">
+          <mat-label>Search</mat-label>
+          <input formControlName="search" matInput>
+          <mat-error *ngIf="loginForm.controls.search.touched && loginForm.controls.search.invalid">
+            This field is mandatory.
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="search-button-div">
+        <button [disabled]="!loginForm.valid" color="primary" mat-flat-button type="submit">Search</button>
+      </div>
+    </form>
+
+  </mat-card>
+</div>
 <div *ngFor="let product of products">
   <mat-card (click)="onCardClick(product.id)" matRipple>
     <mat-card-content>
@@ -33,4 +53,7 @@
       </div>
     </mat-card-content>
   </mat-card>
+</div>
+<div>
+  <mat-paginator [length]="resultsLength" [pageSize]="pageSize"></mat-paginator>
 </div>

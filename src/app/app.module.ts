@@ -13,11 +13,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { OwlModule } from 'ngx-owl-carousel';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
-import { MatSidenavModule } from  '@angular/material/sidenav';
-import { MatListModule } from  '@angular/material/list';
-import { MatIconModule } from  '@angular/material/icon';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 import { AppComponent } from './app.component';
@@ -58,7 +60,8 @@ const routes: Routes = [
     MatButtonModule,
     MatIconModule,
     OwlModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

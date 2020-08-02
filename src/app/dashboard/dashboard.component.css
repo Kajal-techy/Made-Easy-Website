@@ -16,3 +16,25 @@
     width: 90%;
     height: 100%;
 }
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-div {
+    width: 50%;
+}
+
+.search-field {
+    width: 100%;
+}
+
+.search-button-div {
+    padding-left: 30px;
+}
+
+mat-header-cell {
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
