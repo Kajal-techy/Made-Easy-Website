@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import  { SessionService } from 'src/app/service/angular-service/session.service';
+import { SessionService } from 'src/app/service/angular-service/session.service';
 import { Product } from 'src/app/model/product';
 import { SessionInfo } from 'src/app/model/sessionInfo';
 import { Observable } from 'rxjs';
@@ -17,17 +17,25 @@ export class ProductService {
 
   public getAllProducts(): Observable<any> {
     let header = new HttpHeaders().set('Authorization', 'Bearer ' + this.sessionService.getSessionInfo().token);
-    return this.httpClient.get(`${this.url}`, {headers:header});
+    return this.httpClient.get(`${this.url}`, { headers: header });
   }
 
   public getProductById(userId: string, sellerDetail: boolean = false): Observable<any> {
 
     let header = new HttpHeaders().set('Authorization', 'Bearer ' + this.sessionService.getSessionInfo().token);
-    return this.httpClient.get(`${this.url}/${userId}?sellerDetail=${sellerDetail}`, {headers:header});
+    return this.httpClient.get(`${this.url}/${userId}?sellerDetail=${sellerDetail}`, { headers: header });
   }
 
   public createProduct(product: Product): Observable<any> {
     let header = new HttpHeaders().set('Authorization', 'Bearer ' + this.sessionService.getSessionInfo().token);
-    return this.httpClient.post(`${this.url}`, product, {headers:header});
+    return this.httpClient.post(`${this.url}`, product, { headers: header });
   }
+
+  public searchProducts(offset: number, limit: number, q?: string): Observable<any> {
+    let header = new HttpHeaders().set('Authorization', 'Bearer ' + this.sessionService.getSessionInfo().token);
+    if (q) {
+      return this.httpClient.get(`${this.url}/search?q=${q}&offset=${offset}&limit=${limit}`, { headers: header });
+    }
+    return this.httpClient.get(`${this.url}?offset=${offset}&limit=${limit}`, { headers: header });
+  };
 }
